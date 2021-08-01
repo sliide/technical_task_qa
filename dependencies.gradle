@@ -72,6 +72,8 @@ deps.dagger = dagger
 def espresso = [:]
 espresso.core = "androidx.test.espresso:espresso-core:$versions.espresso"
 espresso.junit_ext = "androidx.test.ext:junit:1.1.1"
+espresso.intents = "androidx.test.espresso:espresso-intents:3.1.0"
+espresso.contrib = "androidx.test.espresso:espresso-contrib:3.1.0"
 deps.espresso = espresso
 
 def mockito = [:]
@@ -111,6 +113,7 @@ deps.joda_time = "net.danlew:android.joda:$versions.joda_time"
 deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_logging_interceptor"
 deps.arch_core = "androidx.arch.core:core-testing:$versions.arch_core"
 deps.test_rules = "androidx.test:rules:$versions.test_rules"
+deps.conditionwatcher = "com.azimolabs.conditionwatcher:conditionwatcher:0.2"
 
 ext.deps = deps
 
