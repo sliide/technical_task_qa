@@ -49,6 +49,7 @@ dependencies {
     implementation deps.room.rxjava2
     implementation deps.glide.runtime
     implementation deps.glide.okhttp_integration
+    implementation 'androidx.test.espresso:espresso-contrib:3.3.0'
 
     debugImplementation deps.leakcanary.debug
 
