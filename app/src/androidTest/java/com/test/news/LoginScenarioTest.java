@@ -36,6 +36,11 @@ public class LoginScenarioTest {
     public ActivityTestRule<LoginActivity> loginActivityActivityTestRule = new ActivityTestRule<>(LoginActivity.class);
 
     @Test
+    public void testLoginViewDisplayOnOpen() {
+        onView(withId(R.id.buttonLogin)).check(matches(isDisplayed()));
+    }
+    
+    @Test
     public void testLoginFailedScenario() {
         onView(withId(R.id.editTextUserName))
                 .perform(clearText(), typeText(VALID_USER_NAME));
