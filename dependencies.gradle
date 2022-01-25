@@ -26,6 +26,7 @@ versions.mockito2 = "3.2.4"
 versions.mockito_kotlin = '2.2.0'
 versions.arch_core = '2.1.0'
 versions.test_rules = "1.2.0"
+versions.kaspresso = "1.0.1-support"
 
 def build_versions = [:]
 build_versions.min_sdk = 21
@@ -111,6 +112,7 @@ deps.joda_time = "net.danlew:android.joda:$versions.joda_time"
 deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_logging_interceptor"
 deps.arch_core = "androidx.arch.core:core-testing:$versions.arch_core"
 deps.test_rules = "androidx.test:rules:$versions.test_rules"
+deps.kaspresso = "com.kaspersky.android-components:kaspresso:$versions.kaspresso"
 
 ext.deps = deps
 

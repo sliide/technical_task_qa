@@ -3,6 +3,7 @@ package com.test.news.features.news.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.VisibleForTesting
 import androidx.recyclerview.widget.RecyclerView
 import com.test.news.R
 import com.test.news.base.GlideApp
@@ -29,6 +30,9 @@ class NewsImagesAdapter(
             .load(imageUrls[position])
             .into(holder.view.imageView)
     }
+
+    @VisibleForTesting
+    fun getImageUrls() = imageUrls
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 }
