@@ -1,21 +1,13 @@
 package com.test.news
 
 import android.app.Application
-import com.test.news.di.DaggerAppComponent
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasAndroidInjector
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
-import javax.inject.Inject
 
-class NewsApp : Application(), HasAndroidInjector {
-
-    @Inject
-    lateinit var dispatchingActivityInjector: DispatchingAndroidInjector<Any>
-
+abstract class BaseApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        initToolsForDebugOnly()
-        DaggerAppComponent.builder().application(this).build().inject(this)
+        this.initToolsForDebugOnly()
     }
 
     private fun initToolsForDebugOnly() {
@@ -23,6 +15,7 @@ class NewsApp : Application(), HasAndroidInjector {
             Timber.plant(Timber.DebugTree())
         }
     }
-
-    override fun androidInjector() = dispatchingActivityInjector
 }
+
+@HiltAndroidApp
+class NewsApp : BaseApp()

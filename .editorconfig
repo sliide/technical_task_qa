@@ -1,0 +1,54 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# https://github.com/jokeyrhyme/standard-editorconfig
+
+# top-most EditorConfig file
+root = true
+
+
+# defaults
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Java
+# https://google.github.io/styleguide/javaguide.html#s4.2-block-indentation
+[*.java]
+indent_size = 4
+indent_style = space
+
+# Kotlin
+# https://android.github.io/kotlin-guides/style.html#indentation
+[*.{kt,kts}]
+ktlint_code_style = android_studio
+indent_size = 4
+max_line_length = 120
+indent_style = space
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+ktlint_function_naming_ignore_when_annotated_with = Composable
+ktlint_class_signature_rule_force_multiline_when_parameter_count_greater_or_equal_than=1
+ktlint_function_signature_rule_force_multiline_when_parameter_count_greater_or_equal_than=2
+
+# Twitter Compose rules
+twitter_compose_allowed_composition_locals = LocalAppIconsSizes, LocalAppColors, LocalAppShapes, LocalAppSpacing, LocalAppTypography, LocalAppShadows
+
+# Gradle
+# https://android.github.io/kotlin-guides/style.html#indentation
+[*.gradle]
+indent_size = 4
+indent_style = space
+
+# Shell
+# https://google.github.io/styleguide/shell.xml#Indentation
+[*.{bash, sh, zsh}]
+indent_size = 4
+indent_style = space
+
+# YAML
+# http://yaml.org/spec/1.2/2009-07-21/spec.html#id2576668
+[*.xml]
+indent_size = 4
+indent_style = space

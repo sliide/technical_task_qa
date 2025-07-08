@@ -1,23 +1,45 @@
 package com.test.news.features.news.domain.model
 
-import com.test.news.features.news.data.model.NewsItem
-import com.test.news.features.news.data.model.WidgetType
+import com.test.news.features.news.data.model.NewsWithImages
 import javax.inject.Inject
 
-class NewsItemsModelMapper @Inject constructor() {
+class NewsItemsModelMapper
+@Inject
+constructor() {
+    fun map(newsItems: List<NewsWithImages>) = mutableListOf<NewsModel>()
+        .apply {
+            newsItems.forEach { add(mapNewsItem(it)) }
+        }.toList()
 
-    fun map(newsItems: List<NewsItem>) = mutableListOf<NewsModel>().apply {
-        newsItems.forEach { add(mapNewsItem(it, newsItems)) }
-    }.toList()
+    private fun mapNewsItem(item: NewsWithImages) = when (item.news.type) {
+        "slider" ->
+            NewsModel.Slider(
+                item.images.mapNotNull { it.url },
+                item.news.datatype,
+                item.news.title,
+                item.news.author,
+                item.news.sourceName,
+                item.news.deepLink,
+                item.news.url,
+                item.news.publishedAt,
+                item.news.content,
+                item.news.description,
+            )
 
-    private fun mapNewsItem(item: NewsItem, newsItems: List<NewsItem>) = when (item.type) {
-        WidgetType.SLIDER -> mapToSliderModel(item, newsItems)
-        WidgetType.IMAGE -> NewsModel.Image(item.images.map { it.url })
-    }
+        "image" ->
+            NewsModel.Image(
+                item.images.mapNotNull { it.url },
+                item.news.datatype,
+                item.news.title,
+                item.news.author,
+                item.news.sourceName,
+                item.news.deepLink,
+                item.news.url,
+                item.news.publishedAt,
+                item.news.content,
+                item.news.description,
+            )
 
-    private fun mapToSliderModel(sliderItem: NewsItem, allItems: List<NewsItem>): NewsModel.Slider {
-        val sliderImageIds = sliderItem.images.map { it.id }
-        val sliderImageUrls = allItems.filter { sliderImageIds.contains(it.id) }.map { it.images.first().url }
-        return NewsModel.Slider(sliderImageUrls)
+        else -> NewsModel.Empty()
     }
 }
