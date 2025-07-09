@@ -3,9 +3,7 @@
 ##### Please create your own repo and share the solution with us
 
 ### Description
-During the test we want you to imagine yourself as a member of our team, with a collective goal of getting our tasks completed.
-
-When we have reviewed your test, and any accompanying documents you feel necessary, if we like what we see, we’ll invite you to join us for a video conversation during which we’ll ask you to go through your test, explaining any decisions that you made.
+During the test we'd like you to imagine yourself as a member of our team, which has a collective goal of getting our sprint tasks completed.
 
 Let’s start!
 
@@ -16,59 +14,59 @@ We are in the middle of the sprint and the following 2 user stories were just mo
 
 #### Scenario 1 - user opens the android app first time (when not logged in yet)
 
-Given - the user opens app for the first time (when not logged in yet)
+Given - The user opens the app for the first time (when not logged in yet)
 
-Then - login screen with user name and password entries and login button is displayed
+Then - The login screen with user name and password entries and login button is displayed
 
-#### Scenario 2 - user login failed
+#### Scenario 2 - User login failed
 
-Given - the user provided wrong user name and/or password
+Given - The user provided wrong user name and/or password
 
-When - login button is clicked
+When - The Login button is clicked
 
-Then - error markers are displayed by user name and/or password entries
+Then - The error markers are displayed by user name and/or password entries
 
-#### Scenario 3 - user login succeed (credentials provided below)
+#### Scenario 3 - User login succeed (credentials provided below)
 
-Given - the user provided right user name and password
+Given - The user provided correct credentials
 
-When - login button is clicked
+When - Login button is clicked
 
-Then - user is taken to the news screen
+Then - User is taken to the news screen
 
-#### Scenario 4 - user opens app next time (when previously logged in)
+#### Scenario 4 - User opens app next time (when previously logged in)
 
-Given - the user opens app next time (when previously logged in)
+Given -The user opens app next time (when previously logged in)
 
-Then - user is taken straight to the news screen
+Then - User is taken straight to the news screen
 
  ##
 
 ### 2 - As a user I want to see my news
 
-#### Scenario 1 - news images are loaded
+#### Scenario 1 - News images are loaded
 
-Given - the user successfully logged in to the app
+Given - tThe user successfully logged in to the app
 
-When - there is internet connection
+When - There is internet connection
 
-Then - images are displayed in the rows on the list (row can have one or more images scrollable horizontally)
+Then - Images are displayed in the rows on the list (row can have one or more images scrollable horizontally)
 
-#### Scenario 2 - failed to load images
+#### Scenario 2 - Failed to load images
 
-Given - the user successfully logged in to the app
+Given - The user successfully logged in to the app
 
-When - there is no internet connection
+When - There is no internet connection
 
-Then - “failed to load news” error message is displayed and Retry button
+Then - “Failed to load news” error message is displayed with a Retry button
 
-#### Scenario 3 - news card is clicked
+#### Scenario 3 - News card is clicked
 
-Given - the news cards are successfully loaded on the screen
+Given - The news cards are successfully loaded on the screen
 
-When - the user clicks one of the cards
+When - The user clicks one of the cards
 
-Then - user is navigated to the external browser with a corresponding article loaded
+Then - User is navigated to the external browser with a corresponding article loaded
 
 #### Login credentials:
 #### user: password
@@ -76,20 +74,23 @@ Then - user is navigated to the external browser with a corresponding article lo
 
 ##
 
-Now it’s your turn. You need to verify if we can move these two tickets to Done column on our Jira board.
+Now it’s your turn. You need to verify if we can move these two tickets to the Done column on our Jira board.
 We expect that these functions will be tested both manually and automatically by you.
 
-### Manual tests - we expect that any bugs will be reported in clear form
+### Manual tests - We expect that any bugs will be reported in clear form
 
-### Automated tests - using jetpack compose test or any other tool of your choosing (explain why)
+### Automated tests - Using jetpack compose test or any other tool of your choosing (explain why)
 
-* At Sliide we love clean code, so please try to write your tests neatly.
+* At Sliide we love clean code so please try to write your tests neatly.
 
 * It’s not mandatory but using an additional abstraction level for your tests (like POM or your own framework to facilitate writing tests) will be very much appreciated
 
 * As a note, we won't consider any automation task submission created with a test recorder.
 
+At Sliide we highly appreciate good communication at all times. If you have any questions, please don’t hesitate to ask us :)
 
-At Sliide we highly appreciate good communication at all times so, if you have any questions, don’t hesitate to ask
+### Next Steps
+Once we have received your test along with any other documentation which you feel is necessary for your submission, we will review it. If we like what we see, we'll invite you into our office for
+a face to face discussion where you'll ask you questions about your test.
 
 ## Good luck!
