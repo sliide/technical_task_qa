@@ -46,7 +46,7 @@ Then - User is taken straight to the news screen
 
 #### Scenario 1 - News images are loaded
 
-Given - tThe user successfully logged in to the app
+Given - The user successfully logged in to the app
 
 When - There is internet connection
 
