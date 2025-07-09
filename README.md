@@ -3,7 +3,7 @@
 ##### Please create your own repo and share the solution with us
 
 ### Description
-During the test we want you to imagine yourself as a member of our team, with a collective goal of getting our tasks completed. 
+During the test we want you to imagine yourself as a member of our team, with a collective goal of getting our tasks completed.
 
 When we have reviewed your test, and any accompanying documents you feel necessary, if we like what we see, we’ll invite you to join us for a video conversation during which we’ll ask you to go through your test, explaining any decisions that you made.
 
@@ -62,13 +62,13 @@ When - there is no internet connection
 
 Then - “failed to load news” error message is displayed and Retry button
 
-#### Scenario 3 - news image is clicked
+#### Scenario 3 - news card is clicked
 
-Given - the news images are successfully loaded on the screen
+Given - the news cards are successfully loaded on the screen
 
-When - the user clicks one of the image
+When - the user clicks one of the cards
 
-Then - user is navigated to the external browser with clicked image loaded
+Then - user is navigated to the external browser with a corresponding article loaded
 
 #### Login credentials:
 #### user: password
@@ -81,15 +81,15 @@ We expect that these functions will be tested both manually and automatically by
 
 ### Manual tests - we expect that any bugs will be reported in clear form
 
-### Automated tests - using Espresso or any other tool of your choosing (explain why)
+### Automated tests - using jetpack compose test or any other tool of your choosing (explain why)
 
-* At Sliide we love clean code, so please try to write your tests neatly. 
+* At Sliide we love clean code, so please try to write your tests neatly.
 
-* It’s not mandatory but using an additional abstraction level for your tests (like your own framework to facilitate writing tests) will be very much appreciated
+* It’s not mandatory but using an additional abstraction level for your tests (like POM or your own framework to facilitate writing tests) will be very much appreciated
 
 * As a note, we won't consider any automation task submission created with a test recorder.
 
 
-At Sliide we highly appreciate good communication at all times so, if you have any questions, don’t hesitate to ask   
+At Sliide we highly appreciate good communication at all times so, if you have any questions, don’t hesitate to ask
 
-## Good luck!   
+## Good luck!
