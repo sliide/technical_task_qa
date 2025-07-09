@@ -91,6 +91,6 @@ At Sliide we highly appreciate good communication at all times. If you have any 
 
 ### Next Steps
 Once we have received your test along with any other documentation which you feel is necessary for your submission, we will review it. If we like what we see, we'll invite you into our office for
-a face to face discussion where you'll ask you questions about your test.
+a face to face discussion where we’ll ask you to go through your test, explaining any decisions that you've made.
 
 ## Good luck!
