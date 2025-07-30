@@ -1,32 +1,18 @@
 package com.test.news
 
-import androidx.compose.ui.test.hasText
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.performClick
-import androidx.test.ext.junit.runners.AndroidJUnit4
-import dagger.hilt.android.testing.HiltAndroidRule
+import com.test.news.hooks.BeforeAfterSetup
+import com.test.news.screens.ScreenHolder
 import dagger.hilt.android.testing.HiltAndroidTest
-import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
 @HiltAndroidTest
-@RunWith(AndroidJUnit4::class)
-class NewsAppTest {
-    @get:Rule(order = 0)
-    var hiltRule = HiltAndroidRule(this)
-
-    @get:Rule(order = 1)
-    var composeTestRule = createAndroidComposeRule<MainActivity>()
-
-    @Before
-    fun setup() {
-        hiltRule.inject()
-    }
+class NewsAppTest : BeforeAfterSetup() {
+    private val screens = ScreenHolder(composeTestRule)
 
     @Test
-    fun someTest() {
-        composeTestRule.onAllNodes(hasText("Login"))[1].performClick()
+    fun verifyICanSeeLoginScreen() {
+        with(screens.loginScreen) {
+            assertLoginScreenIsDisplayed()
+        }
     }
 }

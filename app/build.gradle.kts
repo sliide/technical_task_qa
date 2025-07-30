@@ -33,6 +33,7 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     implementation(libs.room.paging)
+    implementation(libs.androidx.uiautomator)
     kapt(libs.room.compiler)
     implementation(libs.javajwt)
     implementation(libs.javax.annotation)

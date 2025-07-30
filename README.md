@@ -69,7 +69,7 @@ When - The user clicks one of the cards
 Then - User is navigated to the external browser with a corresponding article loaded
 
 #### Login credentials:
-#### user: password
+#### user: user
 #### password: password
 
 ##
