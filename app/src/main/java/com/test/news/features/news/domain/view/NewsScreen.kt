@@ -13,8 +13,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.test.news.AppTestTags
 import com.test.news.R
 import com.test.news.features.news.domain.model.NewsModel
 import com.test.news.features.news.domain.repository.NewsResult
@@ -39,7 +41,10 @@ fun NewsScreen(viewModel: NewsViewModel = hiltViewModel()) {
 
         is NewsResult.News -> {
             val newsList = (newsResult as NewsResult.News).news
-            LazyColumn(modifier = Modifier.fillMaxSize()) {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize()
+                    .testTag(AppTestTags.NEWS_COLUMN),
+            ) {
                 items(newsList) { newsModel ->
                     when (newsModel) {
                         is NewsModel.Image -> ImageNewsItem(newsModel)

@@ -22,9 +22,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.test.news.AppTestTags
 import com.test.news.R
 import com.test.news.features.login.domain.model.LoginFailReason
 import com.test.news.features.login.domain.model.LoginResult
@@ -96,7 +98,8 @@ fun LoginScreen(
                     onValueChange = { username = it },
                     label = { Text(stringResource(R.string.login_user_name_hint)) },
                     singleLine = true,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth()
+                        .testTag(AppTestTags.USER_NAME_TEXT_FIELD),
                 )
                 OutlinedTextField(
                     value = password,
@@ -106,7 +109,8 @@ fun LoginScreen(
                     modifier =
                     Modifier
                         .fillMaxWidth()
-                        .padding(top = 8.dp),
+                        .padding(top = 8.dp)
+                        .testTag(AppTestTags.PASSWORD_TEXT_FIELD),
                 )
                 Button(
                     onClick = {
@@ -116,7 +120,8 @@ fun LoginScreen(
                     modifier =
                     Modifier
                         .fillMaxWidth()
-                        .padding(top = 16.dp),
+                        .padding(top = 16.dp)
+                        .testTag(AppTestTags.LOGIN_BUTTON),
                 ) {
                     Text(stringResource(R.string.login_button_text))
                 }
@@ -125,7 +130,8 @@ fun LoginScreen(
                     Text(
                         text = message,
                         color = MaterialTheme.colorScheme.error,
-                        modifier = Modifier.padding(top = 8.dp),
+                        modifier = Modifier.padding(top = 8.dp)
+                            .testTag(AppTestTags.LOGIN_ERROR_MESSAGE),
                     )
                 }
             }
