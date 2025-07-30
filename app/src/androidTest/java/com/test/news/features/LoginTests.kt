@@ -49,4 +49,29 @@ class LoginTests : BeforeAfterSetup() {
             assertLoginErrorMessageWithWrongPasswordIsDisplayed()
         }
     }
+
+    @Test
+    fun verifyICanLoginWithValidUser() {
+        with(screens.loginScreen) {
+            loginWIthValidUser()
+        }
+
+        with(screens.newsScreen) {
+            assertNewsScreenIsDisplayed()
+        }
+    }
+
+    @Test
+    fun verifyIAmStillLoggedInAfterBackgroundAndForeground() {
+        with(screens.loginScreen) {
+            loginWIthValidUser()
+        }
+
+        with(screens.newsScreen) {
+            assertNewsScreenIsDisplayed()
+            navigateHome()
+            openRecentApps()
+            assertNewsScreenIsDisplayed()
+        }
+    }
 }

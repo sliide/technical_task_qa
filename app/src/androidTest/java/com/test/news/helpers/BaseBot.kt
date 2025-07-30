@@ -131,4 +131,20 @@ open class BaseBot(
                 .assert(hasText(text))
         }
     }
+
+    // UiAutomator actions
+    fun navigateHome() {
+        Timber.i("Navigating to home screen")
+        uiDevice.pressHome()
+        SystemClock.sleep(500) // Wait for the home screen to load
+        uiDevice.waitForIdle()
+    }
+
+    fun openRecentApps() {
+        Timber.i("Opening recent apps")
+        uiDevice.pressRecentApps()
+        SystemClock.sleep(500) // Wait for the recent apps to load
+        uiDevice.waitForIdle()
+        uiDevice.click(uiDevice.displayWidth / 2, uiDevice.displayHeight / 2) // Click on the center of the screen
+    }
 }

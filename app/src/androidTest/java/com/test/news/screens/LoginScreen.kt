@@ -15,6 +15,15 @@ class LoginScreen(
     private val loginErrorMessageWrongUserName = R.string.login_wrong_user_name_error
     private val loginErrorMessageWrongPassword = R.string.login_wrong_password_error
 
+    fun loginWIthValidUser() {
+        assertLoginScreenIsDisplayed()
+        enterUsernameAndPassword(
+            username = com.test.news.helpers.HardcodedUsers.VALID_USER.userName,
+            password = com.test.news.helpers.HardcodedUsers.VALID_USER.password,
+        )
+        tapLoginButton()
+    }
+
     fun assertLoginScreenIsDisplayed() {
         listOf(
             userNameHintString,
