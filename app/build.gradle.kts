@@ -34,6 +34,8 @@ dependencies {
     implementation(libs.room.ktx)
     implementation(libs.room.paging)
     implementation(libs.androidx.uiautomator)
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.espresso.web)
     kapt(libs.room.compiler)
     implementation(libs.javajwt)
     implementation(libs.javax.annotation)
