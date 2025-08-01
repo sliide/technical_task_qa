@@ -38,6 +38,7 @@ class LoginScreen(
     ) {
         typeTextOnNodeWithTag(AppTestTags.USER_NAME_TEXT_FIELD, textInput = username)
         typeTextOnNodeWithTag(AppTestTags.PASSWORD_TEXT_FIELD, textInput = password)
+        dismissKeyboard()
     }
 
     fun tapLoginButton() {

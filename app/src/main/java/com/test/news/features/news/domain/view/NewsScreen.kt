@@ -34,7 +34,13 @@ fun NewsScreen(viewModel: NewsViewModel = hiltViewModel()) {
         }
 
         is NewsResult.Error -> {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .testTag(AppTestTags.NEWS_ERROR_MESSAGE
+                    ),
+                contentAlignment = Alignment.Center,
+            ) {
                 Text(text = stringResource(R.string.news_failed_to_load_message))
             }
         }

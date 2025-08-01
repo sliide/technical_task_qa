@@ -12,10 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import coil.compose.rememberAsyncImagePainter
+import com.test.news.AppTestTags
 import com.test.news.R
 import com.test.news.features.news.domain.model.NewsModel
 
@@ -41,7 +43,8 @@ fun ImageNewsItem(newsModel: NewsModel.Image) {
                 modifier =
                 Modifier
                     .fillMaxWidth()
-                    .height(200.dp),
+                    .height(200.dp)
+                    .testTag(AppTestTags.NEWS_CARD_IMAGE),
                 contentScale = ContentScale.Crop,
             )
             newsModel.title?.let {

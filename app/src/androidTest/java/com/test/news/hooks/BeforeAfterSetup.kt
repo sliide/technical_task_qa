@@ -1,9 +1,11 @@
 package com.test.news.hooks
 
 import android.app.Instrumentation
+import android.os.SystemClock
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
 import com.test.news.MainActivity
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -37,17 +39,31 @@ open class BeforeAfterSetup {
 
     @After
     fun tearDown() {
+        if (uiDevice.hasObject(By.pkg("com.android.chrome"))) {
+            Timber.i("Chrome app is running, killing it")
+            killChrome()
+        }
+
         executeAdbCommand("settings put global window_animation_scale 1")
         executeAdbCommand("settings put global transition_animation_scale 1")
         executeAdbCommand("settings put global animator_duration_scale 1")
         executeAdbCommand("settings put global heads_up_notifications_enabled 1")
+        executeAdbCommand("settings put global airplane_mode_on 0")
+        executeAdbCommand("svc wifi enable")
     }
 
-    private fun executeAdbCommand(command: String) {
+    fun executeAdbCommand(command: String) {
         try {
             uiDevice.executeShellCommand(command)
         } catch (e: Exception) {
             Timber.w("Failed to execute ADB command: $command", e)
         }
+    }
+
+    fun killChrome() {
+        Timber.i("Killing Chrome app")
+        uiDevice.executeShellCommand("am force-stop com.android.chrome")
+        SystemClock.sleep(500) // Wait for the app to close
+        uiDevice.waitForIdle()
     }
 }

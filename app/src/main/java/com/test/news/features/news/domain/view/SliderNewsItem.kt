@@ -24,10 +24,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import coil.compose.rememberAsyncImagePainter
+import com.test.news.AppTestTags
 import com.test.news.R
 import com.test.news.features.news.domain.model.NewsModel
 
@@ -97,28 +99,36 @@ fun SliderNewsItem(newsModel: NewsModel.Slider) {
                 Text(
                     text = it,
                     style = MaterialTheme.typography.headlineSmall,
-                    modifier = Modifier.padding(top = 8.dp),
+                    modifier = Modifier
+                        .padding(top = 8.dp)
+                        .testTag(AppTestTags.NEWS_CARD_TITLE),
                 )
             }
             newsModel.description?.let {
                 Text(
                     text = it,
                     style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 4.dp),
+                    modifier = Modifier
+                        .padding(top = 4.dp)
+                        .testTag(AppTestTags.NEWS_CARD_DESCRIPTION),
                 )
             }
             newsModel.author?.let {
                 Text(
                     text = stringResource(R.string.news_item_author_prefix) + " " + it,
                     style = MaterialTheme.typography.labelSmall,
-                    modifier = Modifier.padding(top = 4.dp),
+                    modifier = Modifier
+                        .padding(top = 4.dp)
+                        .testTag(AppTestTags.NEWS_CARD_AUTHOR),
                 )
             }
             newsModel.sourceName?.let {
                 Text(
                     text = stringResource(R.string.news_item_source_prefix) + " " + it,
                     style = MaterialTheme.typography.labelSmall,
-                    modifier = Modifier.padding(top = 4.dp),
+                    modifier = Modifier
+                        .padding(top = 4.dp)
+                        .testTag(AppTestTags.NEWS_CARD_SOURCE),
                 )
             }
         }

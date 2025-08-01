@@ -7,4 +7,5 @@ internal class ScreenHolder(
 ) {
     val loginScreen by lazy { LoginScreen(composeTestRule) }
     val newsScreen by lazy { NewsScreen(composeTestRule) }
+    val newsDetailScreen by lazy { NewsDetailScreen(composeTestRule) }
 }
