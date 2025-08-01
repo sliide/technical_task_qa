@@ -52,6 +52,8 @@ room = "2.7.1"
 
 #Logging
 timber = "5.0.1"
+uiautomator = "2.3.0"
+espressoCore = "3.7.0"
 
 [libraries]
 kotlin-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinCollectionsImmutable" }
@@ -110,6 +112,9 @@ android-gradleplugin = { group = "com.android.tools.build", name = "gradle", ver
 hilt-gradleplugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt" }
 kotlin-gradleplugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-serialization-gradleplugin = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlin" }
+androidx-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "uiautomator" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-espresso-web = { group = "androidx.test.espresso", name = "espresso-web", version.ref = "espressoCore" }
 
 [bundles]
 core = [
